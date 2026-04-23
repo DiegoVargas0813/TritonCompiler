@@ -1,0 +1,82 @@
+
+Symbol Table for Identifiers:
+Entry Number | Lexeme
+1            | MZ
+2            | L
+3            | This
+4            | program
+5            | cannot
+6            | be
+7            | run
+8            | in
+9            | DOS
+10           | mode
+11           | PE
+12           | d
+13           | U
+14           | i
+15           | r
+16           | Q
+17           | T
+18           | pR
+19           | R
+20           | m
+21           | rR
+22           | text
+23           | data
+24           | P
+25           | rdata
+
+Symbol Table for Numbers:
+Entry Number | Lexeme | Type
+1            | 3      | int
+2            | 8      | int
+3            | 7      | int
+
+Symbol Table for Strings:
+Entry Number | Lexeme
+
+Token List:
+IDENTIFIER(1)
+AT_SIGN
+IDENTIFIER(2)
+IDENTIFIER(3)
+IDENTIFIER(4)
+IDENTIFIER(5)
+IDENTIFIER(6)
+IDENTIFIER(7)
+IDENTIFIER(8)
+IDENTIFIER(9)
+IDENTIFIER(10)
+DOT
+IDENTIFIER(11)
+IDENTIFIER(12)
+IDENTIFIER(13)
+IDENTIFIER(14)
+NUMBER(1)
+PLUS_SIGN
+NUMBER(2)
+IDENTIFIER(15)
+IDENTIFIER(16)
+AT_SIGN
+AT_SIGN
+IDENTIFIER(17)
+IDENTIFIER(18)
+NUMBER(2)
+IDENTIFIER(19)
+IDENTIFIER(17)
+IDENTIFIER(19)
+IDENTIFIER(20)
+OPEN_PARENTHESIS
+IDENTIFIER(21)
+DOT
+IDENTIFIER(22)
+NUMBER(3)
+NUMBER(2)
+DOT
+IDENTIFIER(23)
+IDENTIFIER(24)
+GREATER_THAN
+AT_SIGN
+DOT
+IDENTIFIER(25)

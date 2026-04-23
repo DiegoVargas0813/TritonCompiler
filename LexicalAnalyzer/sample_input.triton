@@ -1,0 +1,5 @@
+def foo(x):
+    # tag
+    if x > 10:
+        y = "hello"
+        z = x + 3.14

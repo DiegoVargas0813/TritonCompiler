@@ -1,0 +1,37 @@
+# VALID KERNEL EXAMPLE 2: Softmax with Control Flow
+#
+# This kernel demonstrates:
+# - Compound statements (if/else)
+# - Multiple tl.* operations
+# - Chained method calls
+# - Ternary expressions
+# - Subscripting with None (broadcasting)
+
+@triton.jit
+def softmax_kernel(input_ptr, output_ptr, n_cols, BLOCK_SIZE: tl.constexpr):
+    row_idx = tl.program_id(0)
+    col_offsets = tl.arange(0, BLOCK_SIZE)
+
+    # Load input row
+    input_ptrs = input_ptr + row_idx * n_cols + col_offsets
+    mask = col_offsets < n_cols
+    row = tl.load(input_ptrs, mask=mask, other=-float("inf"))
+
+    # Compute max for numerical stability
+    row_max = tl.max(row, axis=0)
+
+    # Subtract max and exponentiate
+    numerator = tl.exp(row - row_max)
+
+    # Sum for normalization
+    denominator = tl.sum(numerator, axis=0)
+
+    # Compute softmax
+    if denominator > 0:
+        softmax_output = numerator / denominator
+    else:
+        softmax_output = tl.full([BLOCK_SIZE], 0.0, tl.float32)
+
+    # Store output
+    output_ptrs = output_ptr + row_idx * n_cols + col_offsets
+    tl.store(output_ptrs, softmax_output, mask=mask)
