@@ -287,15 +287,15 @@ static void yy_fatal_error YY_PROTO(( yyconst char msg[] ));
 
 #define YY_NUM_RULES 30
 #define YY_END_OF_BUFFER 31
-static yyconst short int yy_accept[66] =
+static yyconst short int yy_accept[67] =
     {   0,
-        0,    0,   31,   29,    1,    1,   29,    9,   16,   22,
+        0,    0,   31,   29,    1,    1,   29,    2,   16,   22,
        23,   14,   12,   21,   13,   10,   15,   27,   20,   18,
        19,   17,   11,   28,   24,   25,   28,   28,   28,   28,
-       28,    1,    0,   26,    0,   27,    0,    2,   27,   27,
-        0,   28,   28,   28,   28,    5,   28,    0,    0,    0,
-        2,   27,    0,   27,    4,   28,    7,   28,    0,   27,
-        3,    6,   28,    8,    0
+       28,    1,    0,   26,    0,    2,   27,    0,    3,   27,
+       27,    0,   28,   28,   28,   28,    6,   28,    0,    0,
+        0,    3,   27,    0,   27,    5,   28,    8,   28,    0,
+       27,    4,    7,   28,    9,    0
     } ;
 
 static yyconst int yy_ec[256] =
@@ -338,64 +338,66 @@ static yyconst int yy_meta[36] =
         3,    3,    3,    3,    3
     } ;
 
-static yyconst short int yy_base[70] =
+static yyconst short int yy_base[72] =
     {   0,
-        0,    0,  100,  101,   34,   36,   36,  101,  101,  101,
-      101,  101,  101,  101,  101,   84,   32,   29,  101,  101,
-      101,  101,  101,    0,  101,  101,   71,   66,   64,   67,
-       65,   45,   39,  101,    0,   30,   84,    0,   39,   40,
-       58,    0,   64,   57,   57,    0,   59,   59,   79,   50,
-        0,   50,   72,   70,    0,   52,    0,   45,   60,   43,
-      101,    0,   23,    0,  101,   77,   46,   80,   83
+        0,    0,  102,  103,   34,   36,   36,    0,  103,  103,
+      103,  103,  103,  103,  103,   86,   32,   29,  103,  103,
+      103,  103,  103,    0,  103,  103,   73,   68,   66,   69,
+       67,   45,   39,  103,    0,    0,   30,   86,    0,   39,
+       40,   58,    0,   66,   59,   59,    0,   61,   59,   81,
+       50,    0,   50,   73,   67,    0,   52,    0,   45,   60,
+       43,  103,    0,   23,    0,  103,   77,   80,   46,   83,
+       86
     } ;
 
-static yyconst short int yy_def[70] =
+static yyconst short int yy_def[72] =
     {   0,
-       65,    1,   65,   65,   65,   65,   66,   65,   65,   65,
-       65,   65,   65,   65,   65,   65,   65,   65,   65,   65,
-       65,   65,   65,   67,   65,   65,   67,   67,   67,   67,
-       67,   65,   66,   65,   66,   65,   68,   69,   65,   65,
-       65,   67,   67,   67,   67,   67,   67,   65,   68,   68,
-       69,   65,   65,   65,   67,   67,   67,   67,   65,   65,
-       65,   67,   67,   67,    0,   65,   65,   65,   65
+       66,    1,   66,   66,   66,   66,   67,   68,   66,   66,
+       66,   66,   66,   66,   66,   66,   66,   66,   66,   66,
+       66,   66,   66,   69,   66,   66,   69,   69,   69,   69,
+       69,   66,   67,   66,   67,   68,   66,   70,   71,   66,
+       66,   66,   69,   69,   69,   69,   69,   69,   66,   70,
+       70,   71,   66,   66,   66,   69,   69,   69,   69,   66,
+       66,   66,   69,   69,   69,    0,   66,   66,   66,   66,
+       66
     } ;
 
-static yyconst short int yy_nxt[137] =
+static yyconst short int yy_nxt[139] =
     {   0,
         4,    5,    6,    7,    8,    9,   10,   11,   12,   13,
        14,   15,   16,   17,   18,   19,   20,   21,   22,   23,
        24,   24,   25,    4,   26,   27,   28,   29,   24,   30,
        24,   24,   24,   24,   31,   32,   32,   32,   32,   34,
-       37,   39,   34,   40,   36,   38,   32,   32,   42,   64,
-       41,   48,   39,   52,   40,   41,   48,   60,   50,   35,
-       48,   41,   35,   61,   52,   48,   41,   53,   59,   53,
-       59,   48,   54,   60,   60,   63,   48,   33,   62,   33,
-       49,   49,   49,   51,   54,   51,   54,   50,   58,   57,
-       56,   55,   50,   47,   46,   45,   44,   43,   36,   65,
+       38,   40,   34,   41,   37,   39,   32,   32,   43,   65,
+       42,   49,   40,   53,   41,   42,   49,   61,   51,   35,
+       49,   42,   35,   62,   53,   49,   42,   54,   60,   54,
+       60,   49,   55,   61,   61,   64,   49,   33,   63,   33,
+       36,   55,   36,   50,   50,   50,   52,   55,   52,   51,
+       59,   58,   57,   56,   51,   48,   47,   46,   45,   44,
 
-        3,   65,   65,   65,   65,   65,   65,   65,   65,   65,
-       65,   65,   65,   65,   65,   65,   65,   65,   65,   65,
-       65,   65,   65,   65,   65,   65,   65,   65,   65,   65,
-       65,   65,   65,   65,   65,   65
+       37,   66,    3,   66,   66,   66,   66,   66,   66,   66,
+       66,   66,   66,   66,   66,   66,   66,   66,   66,   66,
+       66,   66,   66,   66,   66,   66,   66,   66,   66,   66,
+       66,   66,   66,   66,   66,   66,   66,   66
     } ;
 
-static yyconst short int yy_chk[137] =
+static yyconst short int yy_chk[139] =
     {   0,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    5,    5,    6,    6,    7,
-       17,   18,   33,   18,   36,   17,   32,   32,   67,   63,
-       18,   36,   40,   39,   40,   18,   36,   60,   50,    7,
-       39,   40,   33,   50,   52,   39,   40,   41,   48,   41,
-       48,   52,   41,   48,   59,   58,   52,   66,   56,   66,
-       68,   68,   68,   69,   54,   69,   53,   49,   47,   45,
-       44,   43,   37,   31,   30,   29,   28,   27,   16,    3,
+       17,   18,   33,   18,   37,   17,   32,   32,   69,   64,
+       18,   37,   41,   40,   41,   18,   37,   61,   51,    7,
+       40,   41,   33,   51,   53,   40,   41,   42,   49,   42,
+       49,   53,   42,   49,   60,   59,   53,   67,   57,   67,
+       68,   55,   68,   70,   70,   70,   71,   54,   71,   50,
+       48,   46,   45,   44,   38,   31,   30,   29,   28,   27,
 
-       65,   65,   65,   65,   65,   65,   65,   65,   65,   65,
-       65,   65,   65,   65,   65,   65,   65,   65,   65,   65,
-       65,   65,   65,   65,   65,   65,   65,   65,   65,   65,
-       65,   65,   65,   65,   65,   65
+       16,    3,   66,   66,   66,   66,   66,   66,   66,   66,
+       66,   66,   66,   66,   66,   66,   66,   66,   66,   66,
+       66,   66,   66,   66,   66,   66,   66,   66,   66,   66,
+       66,   66,   66,   66,   66,   66,   66,   66
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -454,12 +456,102 @@ char *yytext;
     static NumberEntry numbers[MAX_ENTRIES];
     static StringEntry strings[MAX_ENTRIES];
 
+    typedef struct {
+        int token_id;
+        int symbol_table_entry;
+    } TokenEntry;
+
+    enum TokenId {
+        TOK_COMMENT = 1,
+        TOK_DEF = 2,
+        TOK_IF = 3,
+        TOK_ELSE = 4,
+        TOK_FOR = 5,
+        TOK_WHILE = 6,
+        TOK_HASH_TAG = 7,
+        TOK_DOT = 8,
+        TOK_AT_SIGN = 9,
+        TOK_PLUS_SIGN = 10,
+        TOK_MINUS_SIGN = 11,
+        TOK_MULTIPLICATION_SIGN = 12,
+        TOK_DIVISION_SIGN = 13,
+        TOK_MODULO = 14,
+        TOK_GREATER_THAN = 15,
+        TOK_LESS_THAN = 16,
+        TOK_EQUAL = 17,
+        TOK_SEMICOLON = 18,
+        TOK_COMMA = 19,
+        TOK_OPEN_PARENTHESIS = 20,
+        TOK_CLOSE_PARENTHESIS = 21,
+        TOK_OPEN_SQUARE_BRACKET = 22,
+        TOK_CLOSE_SQUARE_BRACKET = 23,
+        TOK_STRING = 24,
+        TOK_NUMBER = 25,
+        TOK_IDENTIFIER = 26
+    };
+
     static int id_count = 0;
     static int num_count = 0;
     static int str_count = 0;
 
-    static char token_list[MAX_ENTRIES * 4][128];
+    static TokenEntry token_list[MAX_ENTRIES * 4];
     static int token_count = 0;
+
+    static void print_json_string(const char* s) {
+        const unsigned char* p = (const unsigned char*)s;
+        putchar('"');
+        while (*p) {
+            switch (*p) {
+                case '"': printf("\\\""); break;
+                case '\\': printf("\\\\"); break;
+                case '\b': printf("\\b"); break;
+                case '\f': printf("\\f"); break;
+                case '\n': printf("\\n"); break;
+                case '\r': printf("\\r"); break;
+                case '\t': printf("\\t"); break;
+                default:
+                    if (*p < 0x20) {
+                        printf("\\u%04x", *p);
+                    } else {
+                        putchar(*p);
+                    }
+                    break;
+            }
+            p++;
+        }
+        putchar('"');
+    }
+
+    static int token_id_from_name(const char* token_name) {
+        if (strcmp(token_name, "COMMENT") == 0) return TOK_COMMENT;
+        if (strcmp(token_name, "DEF") == 0) return TOK_DEF;
+        if (strcmp(token_name, "IF") == 0) return TOK_IF;
+        if (strcmp(token_name, "ELSE") == 0) return TOK_ELSE;
+        if (strcmp(token_name, "FOR") == 0) return TOK_FOR;
+        if (strcmp(token_name, "WHILE") == 0) return TOK_WHILE;
+        if (strcmp(token_name, "HASH_TAG") == 0) return TOK_HASH_TAG;
+        if (strcmp(token_name, "DOT") == 0) return TOK_DOT;
+        if (strcmp(token_name, "AT_SIGN") == 0) return TOK_AT_SIGN;
+        if (strcmp(token_name, "PLUS_SIGN") == 0) return TOK_PLUS_SIGN;
+        if (strcmp(token_name, "MINUS_SIGN") == 0) return TOK_MINUS_SIGN;
+        if (strcmp(token_name, "MULTIPLICATION_SIGN") == 0) return TOK_MULTIPLICATION_SIGN;
+        if (strcmp(token_name, "DIVISION_SIGN") == 0) return TOK_DIVISION_SIGN;
+        if (strcmp(token_name, "MODULO") == 0) return TOK_MODULO;
+        if (strcmp(token_name, "GREATER_THAN") == 0) return TOK_GREATER_THAN;
+        if (strcmp(token_name, "LESS_THAN") == 0) return TOK_LESS_THAN;
+        if (strcmp(token_name, "EQUAL") == 0) return TOK_EQUAL;
+        if (strcmp(token_name, "SEMICOLON") == 0) return TOK_SEMICOLON;
+        if (strcmp(token_name, "COMMA") == 0) return TOK_COMMA;
+        if (strcmp(token_name, "OPEN_PARENTHESIS") == 0) return TOK_OPEN_PARENTHESIS;
+        if (strcmp(token_name, "CLOSE_PARENTHESIS") == 0) return TOK_CLOSE_PARENTHESIS;
+        if (strcmp(token_name, "OPEN_SQUARE_BRACKET") == 0) return TOK_OPEN_SQUARE_BRACKET;
+        if (strcmp(token_name, "CLOSE_SQUARE_BRACKET") == 0) return TOK_CLOSE_SQUARE_BRACKET;
+        if (strcmp(token_name, "STRING") == 0) return TOK_STRING;
+        if (strcmp(token_name, "NUMBER") == 0) return TOK_NUMBER;
+        if (strcmp(token_name, "IDENTIFIER") == 0) return TOK_IDENTIFIER;
+
+        return 0;
+    }
 
     static int add_identifier(const char* lexeme) {
         int i;
@@ -506,8 +598,24 @@ char *yytext;
 
     static int add_string(const char* lexeme) {
         int i;
+        size_t len;
+        const char* start = lexeme;
+        size_t copy_len;
+
+        len = strlen(lexeme);
+        if (len >= 2 && lexeme[0] == '"' && lexeme[len - 1] == '"') {
+            start = lexeme + 1;
+            copy_len = len - 2;
+        } else {
+            copy_len = len;
+        }
+
+        if (copy_len >= MAX_LEXEME_LEN) {
+            copy_len = MAX_LEXEME_LEN - 1;
+        }
+
         for (i = 0; i < str_count; i++) {
-            if (strcmp(strings[i].lexeme, lexeme) == 0) {
+            if (strncmp(strings[i].lexeme, start, copy_len) == 0 && strings[i].lexeme[copy_len] == '\0') {
                 return strings[i].entry;
             }
         }
@@ -518,53 +626,96 @@ char *yytext;
         }
 
         strings[str_count].entry = str_count + 1;
-        strncpy(strings[str_count].lexeme, lexeme, MAX_LEXEME_LEN - 1);
-        strings[str_count].lexeme[MAX_LEXEME_LEN - 1] = '\0';
+        strncpy(strings[str_count].lexeme, start, copy_len);
+        strings[str_count].lexeme[copy_len] = '\0';
         str_count++;
         return str_count;
     }
 
     static void add_token(const char* token_name, int entry) {
+        int token_id;
+
         if (token_count >= MAX_ENTRIES * 4) {
             fprintf(stderr, "Token list overflow.\n");
             exit(1);
         }
 
-        if (entry > 0) {
-            snprintf(token_list[token_count], sizeof(token_list[token_count]), "%s(%d)", token_name, entry);
-        } else {
-            snprintf(token_list[token_count], sizeof(token_list[token_count]), "%s", token_name);
+        token_id = token_id_from_name(token_name);
+        if (token_id == 0) {
+            fprintf(stderr, "Unknown token name: %s\n", token_name);
+            exit(1);
         }
+
+        token_list[token_count].token_id = token_id;
+        token_list[token_count].symbol_table_entry = entry;
         token_count++;
     }
 
     static void print_results(void) {
         int i;
 
-        printf("\nSymbol Table for Identifiers:\n");
-        printf("Entry Number | Lexeme\n");
+        printf("{\n");
+
+        printf("  \"token_ids\": [\n");
+        printf("    [1, \"COMMENT\"], [2, \"DEF\"], [3, \"IF\"], [4, \"ELSE\"], [5, \"FOR\"], [6, \"WHILE\"], [7, \"HASH_TAG\"], [8, \"DOT\"], [9, \"AT_SIGN\"], [10, \"PLUS_SIGN\"], [11, \"MINUS_SIGN\"], [12, \"MULTIPLICATION_SIGN\"], [13, \"DIVISION_SIGN\"], [14, \"MODULO\"], [15, \"GREATER_THAN\"], [16, \"LESS_THAN\"], [17, \"EQUAL\"], [18, \"SEMICOLON\"], [19, \"COMMA\"], [20, \"OPEN_PARENTHESIS\"], [21, \"CLOSE_PARENTHESIS\"], [22, \"OPEN_SQUARE_BRACKET\"], [23, \"CLOSE_SQUARE_BRACKET\"], [24, \"STRING\"], [25, \"NUMBER\"], [26, \"IDENTIFIER\"]\n");
+        printf("  ],\n");
+
+        printf("  \"symbol_tables\": {\n");
+
+        printf("    \"identifiers\": [");
         for (i = 0; i < id_count; i++) {
-            printf("%-12d | %s\n", identifiers[i].entry, identifiers[i].lexeme);
+            printf("[%d, ", identifiers[i].entry);
+            print_json_string(identifiers[i].lexeme);
+            printf("]");
+            if (i < id_count - 1) {
+                printf(", ");
+            }
         }
+        printf("],\n");
 
-        printf("\nSymbol Table for Numbers:\n");
-        printf("Entry Number | Lexeme | Type\n");
+        printf("    \"numbers\": [");
         for (i = 0; i < num_count; i++) {
-            printf("%-12d | %-6s | %s\n", numbers[i].entry, numbers[i].lexeme, numbers[i].type);
+            printf("[%d, ", numbers[i].entry);
+            print_json_string(numbers[i].lexeme);
+            printf(", ");
+            print_json_string(numbers[i].type);
+            printf("]");
+            if (i < num_count - 1) {
+                printf(", ");
+            }
         }
+        printf("],\n");
 
-        printf("\nSymbol Table for Strings:\n");
-        printf("Entry Number | Lexeme\n");
+        printf("    \"strings\": [");
         for (i = 0; i < str_count; i++) {
-            printf("%-12d | %s\n", strings[i].entry, strings[i].lexeme);
+            printf("[%d, ", strings[i].entry);
+            print_json_string(strings[i].lexeme);
+            printf("]");
+            if (i < str_count - 1) {
+                printf(", ");
+            }
         }
+        printf("]\n");
 
-        printf("\nToken List:\n");
+        printf("  },\n");
+
+        printf("  \"tokens\": [");
         for (i = 0; i < token_count; i++) {
-            printf("%s\n", token_list[i]);
+            if (token_list[i].symbol_table_entry > 0) {
+                printf("[%d, %d]", token_list[i].token_id, token_list[i].symbol_table_entry);
+            } else {
+                printf("[%d]", token_list[i].token_id);
+            }
+
+            if (i < token_count - 1) {
+                printf(", ");
+            }
         }
+        printf("]\n");
+
+        printf("}\n");
     }
-#line 568 "lex.yy.c"
+#line 719 "lex.yy.c"
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -715,10 +866,10 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 167 "lexicalAnaluzer.l"
+#line 316 "lexicalAnaluzer.l"
 
 
-#line 722 "lex.yy.c"
+#line 873 "lex.yy.c"
 
 	if ( yy_init )
 		{
@@ -769,13 +920,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 66 )
+				if ( yy_current_state >= 67 )
 					yy_c = yy_meta[(unsigned int) yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 101 );
+		while ( yy_base[yy_current_state] != 103 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -803,132 +954,132 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 169 "lexicalAnaluzer.l"
+#line 318 "lexicalAnaluzer.l"
 ;
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 171 "lexicalAnaluzer.l"
-{ add_token("COMMENT", 0); }
+#line 320 "lexicalAnaluzer.l"
+;
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 172 "lexicalAnaluzer.l"
+#line 322 "lexicalAnaluzer.l"
 { add_token("COMMENT", 0); }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 174 "lexicalAnaluzer.l"
-{ add_token("DEF", 0); }
+#line 323 "lexicalAnaluzer.l"
+{ add_token("COMMENT", 0); }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 175 "lexicalAnaluzer.l"
-{ add_token("IF", 0); }
+#line 325 "lexicalAnaluzer.l"
+{ add_token("DEF", 0); }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 176 "lexicalAnaluzer.l"
-{ add_token("ELSE", 0); }
+#line 326 "lexicalAnaluzer.l"
+{ add_token("IF", 0); }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 177 "lexicalAnaluzer.l"
-{ add_token("FOR", 0); }
+#line 327 "lexicalAnaluzer.l"
+{ add_token("ELSE", 0); }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 178 "lexicalAnaluzer.l"
-{ add_token("WHILE", 0); }
+#line 328 "lexicalAnaluzer.l"
+{ add_token("FOR", 0); }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 180 "lexicalAnaluzer.l"
-{ add_token("HASH_TAG", 0); }
+#line 329 "lexicalAnaluzer.l"
+{ add_token("WHILE", 0); }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 181 "lexicalAnaluzer.l"
+#line 331 "lexicalAnaluzer.l"
 { add_token("DOT", 0); }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 182 "lexicalAnaluzer.l"
+#line 332 "lexicalAnaluzer.l"
 { add_token("AT_SIGN", 0); }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 183 "lexicalAnaluzer.l"
+#line 333 "lexicalAnaluzer.l"
 { add_token("PLUS_SIGN", 0); }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 184 "lexicalAnaluzer.l"
+#line 334 "lexicalAnaluzer.l"
 { add_token("MINUS_SIGN", 0); }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 185 "lexicalAnaluzer.l"
+#line 335 "lexicalAnaluzer.l"
 { add_token("MULTIPLICATION_SIGN", 0); }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 186 "lexicalAnaluzer.l"
+#line 336 "lexicalAnaluzer.l"
 { add_token("DIVISION_SIGN", 0); }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 187 "lexicalAnaluzer.l"
+#line 337 "lexicalAnaluzer.l"
 { add_token("MODULO", 0); }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 188 "lexicalAnaluzer.l"
+#line 338 "lexicalAnaluzer.l"
 { add_token("GREATER_THAN", 0); }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 189 "lexicalAnaluzer.l"
+#line 339 "lexicalAnaluzer.l"
 { add_token("LESS_THAN", 0); }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 190 "lexicalAnaluzer.l"
+#line 340 "lexicalAnaluzer.l"
 { add_token("EQUAL", 0); }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 191 "lexicalAnaluzer.l"
+#line 341 "lexicalAnaluzer.l"
 { add_token("SEMICOLON", 0); }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 192 "lexicalAnaluzer.l"
+#line 342 "lexicalAnaluzer.l"
 { add_token("COMMA", 0); }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 193 "lexicalAnaluzer.l"
+#line 343 "lexicalAnaluzer.l"
 { add_token("OPEN_PARENTHESIS", 0); }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 194 "lexicalAnaluzer.l"
+#line 344 "lexicalAnaluzer.l"
 { add_token("CLOSE_PARENTHESIS", 0); }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 195 "lexicalAnaluzer.l"
+#line 345 "lexicalAnaluzer.l"
 { add_token("OPEN_SQUARE_BRACKET", 0); }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 196 "lexicalAnaluzer.l"
+#line 346 "lexicalAnaluzer.l"
 { add_token("CLOSE_SQUARE_BRACKET", 0); }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 198 "lexicalAnaluzer.l"
+#line 348 "lexicalAnaluzer.l"
 {
                                                     int entry = add_string(yytext);
                                                     add_token("STRING", entry);
@@ -936,7 +1087,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 203 "lexicalAnaluzer.l"
+#line 353 "lexicalAnaluzer.l"
 {
                                                     int entry = add_number(yytext);
                                                     add_token("NUMBER", entry);
@@ -944,7 +1095,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 208 "lexicalAnaluzer.l"
+#line 358 "lexicalAnaluzer.l"
 {
                                                     int entry = add_identifier(yytext);
                                                     add_token("IDENTIFIER", entry);
@@ -952,17 +1103,17 @@ YY_RULE_SETUP
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 213 "lexicalAnaluzer.l"
+#line 363 "lexicalAnaluzer.l"
 {
                                                     fprintf(stderr, "Unknown token: %s\n", yytext);
                                                   }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 217 "lexicalAnaluzer.l"
+#line 367 "lexicalAnaluzer.l"
 ECHO;
 	YY_BREAK
-#line 966 "lex.yy.c"
+#line 1117 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1254,7 +1405,7 @@ static yy_state_type yy_get_previous_state()
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 66 )
+			if ( yy_current_state >= 67 )
 				yy_c = yy_meta[(unsigned int) yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
@@ -1289,11 +1440,11 @@ yy_state_type yy_current_state;
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 66 )
+		if ( yy_current_state >= 67 )
 			yy_c = yy_meta[(unsigned int) yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
-	yy_is_jam = (yy_current_state == 65);
+	yy_is_jam = (yy_current_state == 66);
 
 	return yy_is_jam ? 0 : yy_current_state;
 	}
@@ -1848,7 +1999,7 @@ int main()
 	return 0;
 	}
 #endif
-#line 217 "lexicalAnaluzer.l"
+#line 367 "lexicalAnaluzer.l"
 
 
 int main(int argc, char* argv[]) {
