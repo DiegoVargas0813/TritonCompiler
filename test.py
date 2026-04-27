@@ -1,0 +1,1 @@
+string = "\nThis is a test string.\nIt contains multiple lines.\nThis is the last line."

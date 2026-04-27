@@ -35,3 +35,4 @@ def softmax_kernel(input_ptr, output_ptr, n_cols, BLOCK_SIZE: tl.constexpr):
     # Store output
     output_ptrs = output_ptr + row_idx * n_cols + col_offsets
     tl.store(output_ptrs, softmax_output, mask=mask)
+    <=

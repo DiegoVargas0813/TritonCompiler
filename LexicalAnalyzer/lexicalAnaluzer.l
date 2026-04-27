@@ -311,24 +311,26 @@ INT         {DIGIT}+
 FLOAT       ({DIGIT}+\.{DIGIT}+|{DIGIT}+\.|\.{DIGIT}+)([eE][+-]?{DIGIT}+)?
 SCI         {DIGIT}+([eE][+-]?{DIGIT}+)
 NUMBER      {FLOAT}|{SCI}|{INT}
+
 STRING      \"([^\\\n\"]|\\.)*\"
 
 %%
 
-[ \t\r\n]+                                      ;
+[ \t\r\n]+                                      ; // Whitespace is ignored
 
-#[^\n]*                                          ;
+#[^\n]*                                          ; // Comments starting with # are ignored
 
-"//"[^\n]*                                      { add_token("COMMENT", 0); }
+
+"//"[^\n]*                                      { add_token("COMMENT", 0); } // These are not valid comment structures in the python-like language, remove if not needed
 "/*"([^*]|\*+[^*/])*\*+"/"                    { add_token("COMMENT", 0); }
 
-"def"                                            { add_token("DEF", 0); }
+"def"                                            { add_token("DEF", 0); } // Keywords
 "if"                                             { add_token("IF", 0); }
 "else"                                           { add_token("ELSE", 0); }
 "for"                                            { add_token("FOR", 0); }
 "while"                                          { add_token("WHILE", 0); }
 
-"."                                              { add_token("DOT", 0); }
+"."                                              { add_token("DOT", 0); } // Delimiters and operators
 "@"                                              { add_token("AT_SIGN", 0); }
 "+"                                              { add_token("PLUS_SIGN", 0); }
 "-"                                              { add_token("MINUS_SIGN", 0); }
@@ -345,12 +347,12 @@ STRING      \"([^\\\n\"]|\\.)*\"
 "["                                              { add_token("OPEN_SQUARE_BRACKET", 0); }
 "]"                                              { add_token("CLOSE_SQUARE_BRACKET", 0); }
 
-{STRING}                                          {
+{STRING}                                          { // Remove the surrounding quotes and unescape characters
                                                     int entry = add_string(yytext);
                                                     add_token("STRING", entry);
                                                   }
 
-{NUMBER}                                          {
+{NUMBER}                                          { // Determine if it's an int or float and add to the number table
                                                     int entry = add_number(yytext);
                                                     add_token("NUMBER", entry);
                                                   }
