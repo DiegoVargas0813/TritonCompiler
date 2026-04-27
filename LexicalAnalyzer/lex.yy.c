@@ -411,9 +411,9 @@ static char *yy_last_accepting_cpos;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "lexicalAnaluzer.l"
+#line 1 ".\\lexicalAnalyzer.l"
 #define INITIAL 0
-#line 2 "lexicalAnaluzer.l"
+#line 2 ".\\lexicalAnalyzer.l"
     // Lexical analyzer for the Triton language.
     // Input: Triton source code. Output: Symbol tables for identifiers, numbers, srings, and a token list.
     // This file defines the tokens and patterns for the Triton language.
@@ -866,7 +866,7 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 316 "lexicalAnaluzer.l"
+#line 317 ".\\lexicalAnalyzer.l"
 
 
 #line 873 "lex.yy.c"
@@ -954,148 +954,148 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 318 "lexicalAnaluzer.l"
-;
+#line 319 ".\\lexicalAnalyzer.l"
+; // Whitespace is ignored
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 320 "lexicalAnaluzer.l"
-;
+#line 321 ".\\lexicalAnalyzer.l"
+; // Comments starting with # are ignored
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 322 "lexicalAnaluzer.l"
-{ add_token("COMMENT", 0); }
+#line 324 ".\\lexicalAnalyzer.l"
+{ add_token("COMMENT", 0); } // These are not valid comment structures in the python-like language, remove if not needed
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 323 "lexicalAnaluzer.l"
+#line 325 ".\\lexicalAnalyzer.l"
 { add_token("COMMENT", 0); }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 325 "lexicalAnaluzer.l"
-{ add_token("DEF", 0); }
+#line 327 ".\\lexicalAnalyzer.l"
+{ add_token("DEF", 0); } // Keywords
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 326 "lexicalAnaluzer.l"
+#line 328 ".\\lexicalAnalyzer.l"
 { add_token("IF", 0); }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 327 "lexicalAnaluzer.l"
+#line 329 ".\\lexicalAnalyzer.l"
 { add_token("ELSE", 0); }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 328 "lexicalAnaluzer.l"
+#line 330 ".\\lexicalAnalyzer.l"
 { add_token("FOR", 0); }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 329 "lexicalAnaluzer.l"
+#line 331 ".\\lexicalAnalyzer.l"
 { add_token("WHILE", 0); }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 331 "lexicalAnaluzer.l"
-{ add_token("DOT", 0); }
+#line 333 ".\\lexicalAnalyzer.l"
+{ add_token("DOT", 0); } // Delimiters and operators
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 332 "lexicalAnaluzer.l"
+#line 334 ".\\lexicalAnalyzer.l"
 { add_token("AT_SIGN", 0); }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 333 "lexicalAnaluzer.l"
+#line 335 ".\\lexicalAnalyzer.l"
 { add_token("PLUS_SIGN", 0); }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 334 "lexicalAnaluzer.l"
+#line 336 ".\\lexicalAnalyzer.l"
 { add_token("MINUS_SIGN", 0); }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 335 "lexicalAnaluzer.l"
+#line 337 ".\\lexicalAnalyzer.l"
 { add_token("MULTIPLICATION_SIGN", 0); }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 336 "lexicalAnaluzer.l"
+#line 338 ".\\lexicalAnalyzer.l"
 { add_token("DIVISION_SIGN", 0); }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 337 "lexicalAnaluzer.l"
+#line 339 ".\\lexicalAnalyzer.l"
 { add_token("MODULO", 0); }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 338 "lexicalAnaluzer.l"
+#line 340 ".\\lexicalAnalyzer.l"
 { add_token("GREATER_THAN", 0); }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 339 "lexicalAnaluzer.l"
+#line 341 ".\\lexicalAnalyzer.l"
 { add_token("LESS_THAN", 0); }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 340 "lexicalAnaluzer.l"
+#line 342 ".\\lexicalAnalyzer.l"
 { add_token("EQUAL", 0); }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 341 "lexicalAnaluzer.l"
+#line 343 ".\\lexicalAnalyzer.l"
 { add_token("SEMICOLON", 0); }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 342 "lexicalAnaluzer.l"
+#line 344 ".\\lexicalAnalyzer.l"
 { add_token("COMMA", 0); }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 343 "lexicalAnaluzer.l"
+#line 345 ".\\lexicalAnalyzer.l"
 { add_token("OPEN_PARENTHESIS", 0); }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 344 "lexicalAnaluzer.l"
+#line 346 ".\\lexicalAnalyzer.l"
 { add_token("CLOSE_PARENTHESIS", 0); }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 345 "lexicalAnaluzer.l"
+#line 347 ".\\lexicalAnalyzer.l"
 { add_token("OPEN_SQUARE_BRACKET", 0); }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 346 "lexicalAnaluzer.l"
+#line 348 ".\\lexicalAnalyzer.l"
 { add_token("CLOSE_SQUARE_BRACKET", 0); }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 348 "lexicalAnaluzer.l"
-{
+#line 350 ".\\lexicalAnalyzer.l"
+{ // Remove the surrounding quotes and unescape characters
                                                     int entry = add_string(yytext);
                                                     add_token("STRING", entry);
                                                   }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 353 "lexicalAnaluzer.l"
-{
+#line 355 ".\\lexicalAnalyzer.l"
+{ // Determine if it's an int or float and add to the number table
                                                     int entry = add_number(yytext);
                                                     add_token("NUMBER", entry);
                                                   }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 358 "lexicalAnaluzer.l"
+#line 360 ".\\lexicalAnalyzer.l"
 {
                                                     int entry = add_identifier(yytext);
                                                     add_token("IDENTIFIER", entry);
@@ -1103,14 +1103,14 @@ YY_RULE_SETUP
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 363 "lexicalAnaluzer.l"
+#line 365 ".\\lexicalAnalyzer.l"
 {
                                                     fprintf(stderr, "Unknown token: %s\n", yytext);
                                                   }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 367 "lexicalAnaluzer.l"
+#line 369 ".\\lexicalAnalyzer.l"
 ECHO;
 	YY_BREAK
 #line 1117 "lex.yy.c"
@@ -1999,7 +1999,7 @@ int main()
 	return 0;
 	}
 #endif
-#line 367 "lexicalAnaluzer.l"
+#line 369 ".\\lexicalAnalyzer.l"
 
 
 int main(int argc, char* argv[]) {
