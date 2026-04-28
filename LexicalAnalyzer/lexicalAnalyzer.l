@@ -64,7 +64,7 @@
         TOK_GREATER_THAN = 15,
         TOK_LESS_THAN = 16,
         TOK_EQUAL = 17,
-        TOK_SEMICOLON = 18,
+        TOK_COLON = 18,
         TOK_COMMA = 19,
         TOK_OPEN_PARENTHESIS = 20,
         TOK_CLOSE_PARENTHESIS = 21,
@@ -72,7 +72,11 @@
         TOK_CLOSE_SQUARE_BRACKET = 23,
         TOK_STRING = 24,
         TOK_NUMBER = 25,
-        TOK_IDENTIFIER = 26
+        TOK_IDENTIFIER = 26,
+        TOK_LESS_EQUAL = 27,
+        TOK_GREATER_EQUAL = 28,
+        TOK_NOT_EQUAL = 29,
+        TOK_DOUBLE_EQUAL = 30
     };
 
     static int id_count = 0;
@@ -125,7 +129,7 @@
         if (strcmp(token_name, "GREATER_THAN") == 0) return TOK_GREATER_THAN;
         if (strcmp(token_name, "LESS_THAN") == 0) return TOK_LESS_THAN;
         if (strcmp(token_name, "EQUAL") == 0) return TOK_EQUAL;
-        if (strcmp(token_name, "SEMICOLON") == 0) return TOK_SEMICOLON;
+        if (strcmp(token_name, "COLON") == 0) return TOK_COLON;
         if (strcmp(token_name, "COMMA") == 0) return TOK_COMMA;
         if (strcmp(token_name, "OPEN_PARENTHESIS") == 0) return TOK_OPEN_PARENTHESIS;
         if (strcmp(token_name, "CLOSE_PARENTHESIS") == 0) return TOK_CLOSE_PARENTHESIS;
@@ -134,6 +138,10 @@
         if (strcmp(token_name, "STRING") == 0) return TOK_STRING;
         if (strcmp(token_name, "NUMBER") == 0) return TOK_NUMBER;
         if (strcmp(token_name, "IDENTIFIER") == 0) return TOK_IDENTIFIER;
+        if (strcmp(token_name, "LESS_EQUAL") == 0) return TOK_LESS_EQUAL;
+        if (strcmp(token_name, "GREATER_EQUAL") == 0) return TOK_GREATER_EQUAL;
+        if (strcmp(token_name, "NOT_EQUAL") == 0) return TOK_NOT_EQUAL;
+        if (strcmp(token_name, "DOUBLE_EQUAL") == 0) return TOK_DOUBLE_EQUAL;
 
         return 0;
     }
@@ -242,7 +250,7 @@
         printf("{\n");
 
         printf("  \"token_ids\": [\n");
-        printf("    [1, \"COMMENT\"], [2, \"DEF\"], [3, \"IF\"], [4, \"ELSE\"], [5, \"FOR\"], [6, \"WHILE\"], [7, \"HASH_TAG\"], [8, \"DOT\"], [9, \"AT_SIGN\"], [10, \"PLUS_SIGN\"], [11, \"MINUS_SIGN\"], [12, \"MULTIPLICATION_SIGN\"], [13, \"DIVISION_SIGN\"], [14, \"MODULO\"], [15, \"GREATER_THAN\"], [16, \"LESS_THAN\"], [17, \"EQUAL\"], [18, \"SEMICOLON\"], [19, \"COMMA\"], [20, \"OPEN_PARENTHESIS\"], [21, \"CLOSE_PARENTHESIS\"], [22, \"OPEN_SQUARE_BRACKET\"], [23, \"CLOSE_SQUARE_BRACKET\"], [24, \"STRING\"], [25, \"NUMBER\"], [26, \"IDENTIFIER\"]\n");
+        printf("    [1, \"COMMENT\"], [2, \"DEF\"], [3, \"IF\"], [4, \"ELSE\"], [5, \"FOR\"], [6, \"WHILE\"], [7, \"HASH_TAG\"], [8, \"DOT\"], [9, \"AT_SIGN\"], [10, \"PLUS_SIGN\"], [11, \"MINUS_SIGN\"], [12, \"MULTIPLICATION_SIGN\"], [13, \"DIVISION_SIGN\"], [14, \"MODULO\"], [15, \"GREATER_THAN\"], [16, \"LESS_THAN\"], [17, \"EQUAL\"], [18, \"COLON\"], [19, \"COMMA\"], [20, \"OPEN_PARENTHESIS\"], [21, \"CLOSE_PARENTHESIS\"], [22, \"OPEN_SQUARE_BRACKET\"], [23, \"CLOSE_SQUARE_BRACKET\"], [24, \"STRING\"], [25, \"NUMBER\"], [26, \"IDENTIFIER\"], [27, \"LESS_EQUAL\"], [28, \"GREATER_EQUAL\"], [29, \"NOT_EQUAL\"], [30, \"DOUBLE_EQUAL\"]\n");
         printf("  ],\n");
 
         printf("  \"symbol_tables\": {\n");
@@ -320,15 +328,16 @@ STRING      \"([^\\\n\"]|\\.)*\"
 
 #[^\n]*                                          ; // Comments starting with # are ignored
 
-
-"//"[^\n]*                                      { add_token("COMMENT", 0); } // These are not valid comment structures in the python-like language, remove if not needed
-"/*"([^*]|\*+[^*/])*\*+"/"                    { add_token("COMMENT", 0); }
-
 "def"                                            { add_token("DEF", 0); } // Keywords
 "if"                                             { add_token("IF", 0); }
 "else"                                           { add_token("ELSE", 0); }
 "for"                                            { add_token("FOR", 0); }
 "while"                                          { add_token("WHILE", 0); }
+
+"=="                                             { add_token("DOUBLE_EQUAL", 0); }
+"!="                                             { add_token("NOT_EQUAL", 0); }
+"<="                                             { add_token("LESS_EQUAL", 0); }
+">="                                             { add_token("GREATER_EQUAL", 0); }
 
 "."                                              { add_token("DOT", 0); } // Delimiters and operators
 "@"                                              { add_token("AT_SIGN", 0); }
@@ -340,7 +349,7 @@ STRING      \"([^\\\n\"]|\\.)*\"
 ">"                                              { add_token("GREATER_THAN", 0); }
 "<"                                              { add_token("LESS_THAN", 0); }
 "="                                              { add_token("EQUAL", 0); }
-":"                                              { add_token("SEMICOLON", 0); }
+":"                                              { add_token("COLON", 0); }
 ","                                              { add_token("COMMA", 0); }
 "("                                              { add_token("OPEN_PARENTHESIS", 0); }
 ")"                                              { add_token("CLOSE_PARENTHESIS", 0); }
