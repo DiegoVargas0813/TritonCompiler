@@ -380,7 +380,9 @@ STRING      \"([^\\\n\"]|\\.)*\"
 int main(int argc, char* argv[]) {
     const char* input_path;
     const char* output_path;
-
+    // Handle command-line arguments for input and output files
+    // Expected arguments are: <input_file> [output_file]
+    // <input_file> would be argument 1 and [output_file] would be argument 2 if provided, otherwise it defaults to "lexer_output.txt".
     if (argc < 2 || argc > 3) {
         fprintf(stderr, "Usage: %s <input_file> [output_txt]\n", argv[0]);
         return 1;
