@@ -399,10 +399,6 @@ STR_SQ  \'([^\\\n\']|\\.)*\'
 
 #[^\n]*     ;   /* Comment: everything from # to end of line is ignored */
 
-/* -----------------------------------------------------------------
-   Keywords - listed before the IDENTIFIER rule so Flex gives them
-   priority over the general identifier pattern.
-   ----------------------------------------------------------------- */
 "def"       { add_token("DEF",      0); }
 "for"       { add_token("FOR",      0); }
 "if"        { add_token("IF",       0); }
@@ -431,11 +427,6 @@ STR_SQ  \'([^\\\n\']|\\.)*\'
 "raise"     { add_token("RAISE",    0); }
 "del"       { add_token("DEL",      0); }
 
-/* -----------------------------------------------------------------
-   Compound operators - must come before their single-char prefixes
-   so that Flex applies maximal munch correctly.
-   Ex: "**" before "*", "//" before "/", "<<" before "<".
-   ----------------------------------------------------------------- */
 "**"        { add_token("POWER",         0); }
 "//"        { add_token("FLOOR_DIV",     0); }
 "<<"        { add_token("LEFT_SHIFT",    0); }
@@ -445,9 +436,6 @@ STR_SQ  \'([^\\\n\']|\\.)*\'
 "<="        { add_token("LESS_EQUAL",    0); }
 ">="        { add_token("GREATER_EQUAL", 0); }
 
-/* -----------------------------------------------------------------
-   Single-character operators
-   ----------------------------------------------------------------- */
 "+"         { add_token("PLUS",         0); }
 "-"         { add_token("MINUS",        0); }
 "*"         { add_token("MULTIPLY",     0); }
@@ -461,9 +449,6 @@ STR_SQ  \'([^\\\n\']|\\.)*\'
 "~"         { add_token("BIT_NOT",      0); }
 "^"         { add_token("BIT_XOR",      0); }
 
-/* -----------------------------------------------------------------
-   Delimiters
-   ----------------------------------------------------------------- */
 "."         { add_token("DOT",           0); }
 ","         { add_token("COMMA",         0); }
 ":"         { add_token("COLON",         0); }
@@ -475,11 +460,6 @@ STR_SQ  \'([^\\\n\']|\\.)*\'
 "{"         { add_token("OPEN_BRACE",    0); }
 "}"         { add_token("CLOSE_BRACE",   0); }
 
-/* -----------------------------------------------------------------
-   Literals
-   SCI and FLOAT must come before INT so Flex does not consume only
-   the integer prefix of a float or scientific number.
-   ----------------------------------------------------------------- */
 {STR_DQ}    { add_token("STRING",     add_string(yytext));              }
 {STR_SQ}    { add_token("STRING",     add_string(yytext));              }
 {SCI}       { add_token("SCIENTIFIC", add_number(yytext, "scientific")); }
@@ -487,10 +467,6 @@ STR_SQ  \'([^\\\n\']|\\.)*\'
 {INT}       { add_token("INT",        add_number(yytext, "int"));       }
 {ID}        { add_token("IDENTIFIER", add_identifier(yytext));          }
 
-/* -----------------------------------------------------------------
-   Error rule - catches any character not matched by the rules above.
-   Reports the offending character and continues scanning.
-   ----------------------------------------------------------------- */
 .           { fprintf(stderr, "Lexical error - unrecognized character: '%s' at line %d\n",
                       yytext, yylineno); }
 

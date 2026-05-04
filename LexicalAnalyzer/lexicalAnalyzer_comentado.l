@@ -32,7 +32,7 @@
    ============================================================ */
 %{
 
-/* ------------------------------------------------------------
+ /* ------------------------------------------------------------
    INCLUDES — librerías estándar de C que necesitamos
    ------------------------------------------------------------ */
     #include <stdio.h>   /* Para printf(), fprintf(), freopen() — imprimir y abrir archivos */
@@ -40,7 +40,7 @@
     #include <string.h>  /* Para strcmp(), strncpy(), strlen(), etc. — manipular strings    */
 
 
-/* ------------------------------------------------------------
+ /* ------------------------------------------------------------
    CONSTANTES — límites máximos del programa
    ------------------------------------------------------------ */
     /* Número máximo de filas que puede tener cada tabla de símbolos.
@@ -53,7 +53,7 @@
     #define MAX_LEXEME_LEN  256
 
 
-/* ------------------------------------------------------------
+ /* ------------------------------------------------------------
    STRUCTS — las "plantillas" de cada fila de las tablas
 
    Un struct en C es como un molde para guardar varios datos
@@ -86,7 +86,7 @@
     } StringEntry;
 
 
-/* ------------------------------------------------------------
+ /* ------------------------------------------------------------
    TABLAS DE SÍMBOLOS — los arreglos donde guardamos los datos
 
    Cada tabla es un arreglo de su struct correspondiente.
@@ -98,7 +98,7 @@
     static StringEntry     strings[MAX_ENTRIES];     /* Tabla de strings: hasta 4096 filas         */
 
 
-/* ------------------------------------------------------------
+ /* ------------------------------------------------------------
    STRUCT PARA LA LISTA DE TOKENS
 
    Además de las tablas de símbolos, necesitamos guardar la
@@ -124,7 +124,7 @@
     static TokenEntry token_list[MAX_ENTRIES * 8];
 
 
-/* ------------------------------------------------------------
+ /* ------------------------------------------------------------
    CONTADORES — llevan la cuenta de cuántas filas hay en cada tabla
    ------------------------------------------------------------ */
     static int id_count    = 0; /* Cuántos identificadores distintos se han encontrado */
@@ -133,7 +133,7 @@
     static int token_count = 0; /* Cuántos tokens en total se han encontrado           */
 
 
-/* ------------------------------------------------------------
+ /* ------------------------------------------------------------
    ENUM DE IDs DE TOKENS
 
    Un "enum" en C es una lista de constantes con nombre.
@@ -234,7 +234,7 @@
    cuando Flex las llame desde la sección 2.
    ============================================================ */
 
-/* ------------------------------------------------------------
+ /* ------------------------------------------------------------
    FUNCIÓN: print_json_string
    ¿Qué hace?
      Imprime un texto de C como si fuera un string JSON válido,
@@ -728,7 +728,7 @@ STR_SQ  \'([^\\\n\']|\\.)*\'
 
 %%
 
-/* ------------------------------------------------------------
+ /* ------------------------------------------------------------
    ESPACIOS EN BLANCO — se ignoran, no generan tokens
 
    [ \t\r\n]+  significa: uno o más de: espacio, tab, retorno, salto de línea
@@ -736,7 +736,7 @@ STR_SQ  \'([^\\\n\']|\\.)*\'
    ------------------------------------------------------------ */
 [ \t\r\n]+  ;   /* Espacio, tabulación, salto de línea → ignorar */
 
-/* ------------------------------------------------------------
+ /* ------------------------------------------------------------
    COMENTARIOS — se ignoran, no generan tokens
 
    #[^\n]*  significa: # seguido de cualquier carácter excepto salto de línea
@@ -745,7 +745,7 @@ STR_SQ  \'([^\\\n\']|\\.)*\'
 #[^\n]*     ;   /* Comentario: desde # hasta el fin de la línea → ignorar */
 
 
-/* ------------------------------------------------------------
+ /* ------------------------------------------------------------
    PALABRAS RESERVADAS
 
    IMPORTANTE: estas reglas van ANTES que la regla {ID}
@@ -789,7 +789,7 @@ STR_SQ  \'([^\\\n\']|\\.)*\'
 "del"       { add_token("DEL",      0); } /* Eliminar variable                */
 
 
-/* ------------------------------------------------------------
+ /* ------------------------------------------------------------
    OPERADORES COMPUESTOS (dos caracteres)
 
    DEBEN ir ANTES que los operadores de un solo carácter.
@@ -810,7 +810,7 @@ STR_SQ  \'([^\\\n\']|\\.)*\'
 ">="        { add_token("GREATER_EQUAL", 0); } /* Mayor o igual                */
 
 
-/* ------------------------------------------------------------
+ /* ------------------------------------------------------------
    OPERADORES SIMPLES (un carácter)
    ------------------------------------------------------------ */
 "+"         { add_token("PLUS",         0); } /* Suma                          */
@@ -827,7 +827,7 @@ STR_SQ  \'([^\\\n\']|\\.)*\'
 "^"         { add_token("BIT_XOR",      0); } /* XOR a nivel de bits           */
 
 
-/* ------------------------------------------------------------
+ /* ------------------------------------------------------------
    DELIMITADORES (símbolos de estructura, no operadores)
    ------------------------------------------------------------ */
 "."         { add_token("DOT",           0); } /* Punto: tl.load               */
@@ -842,7 +842,7 @@ STR_SQ  \'([^\\\n\']|\\.)*\'
 "}"         { add_token("CLOSE_BRACE",   0); } /* Llave de cierre              */
 
 
-/* ------------------------------------------------------------
+ /* ------------------------------------------------------------
    LITERALES (tokens que SÍ se guardan en tabla de símbolos)
 
    ORDEN OBLIGATORIO:
@@ -864,7 +864,7 @@ STR_SQ  \'([^\\\n\']|\\.)*\'
 {ID}        { add_token("IDENTIFIER", add_identifier(yytext));           } /* Identificador           */
 
 
-/* ------------------------------------------------------------
+ /* ------------------------------------------------------------
    REGLA DE ERROR — captura cualquier carácter no reconocido
 
    El punto "." en Flex coincide con CUALQUIER carácter que
